@@ -64,7 +64,10 @@ Ib=S(2);
 Ic=S(3);
 
 %fprintf(' Ia= %f \n Ib= %f \n Ic= %f \n Vb= %f \n Vd= %f \n Vg= %f \n',X);
-
+Ir3=Ia-Ib;
+Ir5=Id-Ib;
+Ir4=Ia-Ic;
+Ivc=Id-Ic;
 
 
 fid=fopen("tabelaNos.tex","w+");
@@ -85,3 +88,12 @@ Ic & %f\\\\ \\hline \n\
 Id & %f\\\\ \\hline",Ia,Ib,Ic,Id)
 
 fclose(fid2);
+
+
+fid3=fopen("tabelaAux.tex","w+");
+fprintf(fid,"Ir3 & %f\\\\ \\hline \n\
+Ir4 & %f\\\\ \\hline \n\
+Ir5 & %f\\\\ \\hline \n\
+Ivc & %f\\\\ \\hline",Ir3,Ir4,Ir5,Ivc)
+
+fclose(fid3);
