@@ -1,0 +1,7 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Theoretical Analysis}{1}{section.2}
+\contentsline {section}{\numberline {3}Valores octave}{1}{section.3}
+\contentsline {section}{\numberline {4}Simulation Analysis}{2}{section.4}
+\contentsline {subsection}{\numberline {4.1}Operating Point Analysis}{2}{subsection.4.1}
+\contentsline {section}{\numberline {5}Conclusion}{2}{section.5}
