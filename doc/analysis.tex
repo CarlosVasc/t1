@@ -4,7 +4,7 @@
 \subsection{Mesh Method}
 \label{subsec:mesh}
 
-The circuit consists of four elementary meshes: (a), (b), (c) and (d), respectively associated with mesh currents $I_a$, $I_b$, $I_c$ and $I_d$ (seen in Figure~\ref{fig:esq}) and with equations Eq. (a), Eq. (b),  Eq. (c) and Eq. (d): these are the result of the direct application of the mesh method and they are respectively presented as the first four equations in the system of linear equations \ref{eq:mesh_syst}.
+The circuit consists of four elementary meshes: (a), (b), (c) and (d), respectively associated with mesh currents $I_a$, $I_b$, $I_c$ and $I_d$ (seen in Figure \ref{fig:esq}) and with equations Eq. (a), Eq. (b),  Eq. (c) and Eq. (d): these are the result of the direct application of the mesh method and they are respectively presented as the first four equations in the system of linear equations \ref{eq:mesh_syst}.
 
 Since the current in the dependent current source is a function of $V_b$, a four equation system would be undetermined. Hence, $V_b$ is equated as a function of the mesh currents passing through $R_3$, in the fifth equation of the system \ref{eq:mesh_syst}. 
 
@@ -53,7 +53,7 @@ and computed in Octave scripts, from which the Table~\ref{tab:op1} is obtained.
 As learned in theory classes and understood from Figure~\ref{fig:esq}, the current in a branch is a function of the mesh currents the branch is associated with. If the branch is associated with only one mesh current, then its current equals the mesh current. That is not the case for the branches formed by the $R_3$, $R_4$, $R_5$ and $V_c$ components. To determined those currents, the equations \ref{eq:R_3}, \ref{eq:R_4}, \ref{eq:R_5}, and \ref{eq:V_c} are used.
 
 \begin{equation}
-  Ir3=I_a-I_b
+  I_R3=I_a-I_b
   \label{eq:R_3}
 \end{equation}
 in which $Ir3$ is the current flowing from node 7 to 1.
