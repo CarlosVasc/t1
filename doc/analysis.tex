@@ -22,13 +22,15 @@ Since the current in the dependent current source is a function of $V_b$, a four
 This system can be presented in matrix form as in~\ref{eq:mesh_matrix}
 
 \begin{gather}
-    \begin{bmatrix} \ (R_1 + R_4 + R_3) & -R_3 & -R_4 & 0 & 0 \\ 0 & 1 & 0 & 0 & -K_b \ \\ -R_4 & 0 & (R_4 + R_6 + R_7 - K_c) & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \\ R_3 & -R_3 & 0 & 0 & 1\end{bmatrix}
+    \begin{bmatrix} 
+      \ (R_1 + R_4 + R_3) & -R_3 & -R_4 & 0 & 0 \\ 0 & 1 & 0 & 0 & -K_b \ \\ -R_4 & 0 & (R_4 + R_6 + R_7 - K_c) & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \\ R_3 & -R_3 & 0 & 0 & 1
+    \end{bmatrix}
     \begin{bmatrix}
-    \ I_a \ \\ I_b \\ I_c \\ I_d \\ V_b 
+      \ I_a \ \\ I_b \\ I_c \\ I_d \\ V_b 
     \end{bmatrix}
     =
     \begin{bmatrix}
-    \ -V_a \ \\ 0 \\ 0 \\ I_d \\ 0 
+      \ -V_a \ \\ 0 \\ 0 \\ I_d \\ 0 
     \end{bmatrix}
     \label{eq:mesh_matrix}
 \end{gather}
@@ -166,15 +168,17 @@ Applying the added equations \ref{eq:Add_Vb}, \ref{eq:Add_Ic} and \ref{eq:Add_Vc
 equations, the system of linear equations (produced in matrix form) is \ref{eq:nodal_matrix}
 
 \begin{gather}
-    \begin{bmatrix} (G_1 + G_2 + G_3) & -G_2 & 0 & 0 & 0 & 0 & -G_3 & 0 \\ -G_2 - K_b & G_2 & 0 & 0 & 0 & 0 & K_b & 0 \\ K_b & 0 & G_5 & 0 & 0 & 0 & (-K_b-G_5) & 0 \\ 0 & 0 & 0 & -G_7 & (G_6+G_7) & -G_6 & 0 & 0 \\ 0 & 0 & 0 & 1 & (-K_c \cdot G_6) & (K_c \cdot G_6) & -1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \end{bmatrix}
-    \begin{bmatrix}
+  \begin{bmatrix} 
+    (G_1 + G_2 + G_3) & -G_2 & 0 & 0 & 0 & 0 & -G_3 & 0 \\ -G_2 - K_b & G_2 & 0 & 0 & 0 & 0 & K_b & 0 \\ K_b & 0 & G_5 & 0 & 0 & 0 & (-K_b-G_5) & 0 \\ 0 & 0 & 0 & -G_7 & (G_6+G_7) & -G_6 & 0 & 0 \\ 0 & 0 & 0 & 1 & (-K_c \cdot G_6) & (K_c \cdot G_6) & -1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 
+  \end{bmatrix}
+  \begin{bmatrix}
     V_1 \\ V_2 \\ V_3 \\ V_4 \\ V_5 \\ V_6 \\ V_7 \\ I_t
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
     0 \\ 0 \\ I_d \\ 0 \\ 0 \\ -V_a \\ -I_d \\ 0
-    \end{bmatrix}
-    \label{eq:nodal_matrix}
+  \end{bmatrix}
+  \label{eq:nodal_matrix}
 \end{gather}
 
 
