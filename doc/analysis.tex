@@ -53,24 +53,24 @@ and computed in Octave scripts, from which the Table~\ref{tab:op1} is obtained.
 As learned in theory classes and understood from Figure~\ref{fig:esq}, the current in a branch is a function of the mesh currents the branch is associated with. If the branch is associated with only one mesh current, then its current equals the mesh current. That is not the case for the branches formed by the $R_3$, $R_4$, $R_5$ and $V_c$ components. To determined those currents, the equations \ref{eq:R_3}, \ref{eq:R_4}, \ref{eq:R_5}, and \ref{eq:V_c} are used.
 
 \begin{equation}
-  I_R3=I_a-I_b
+  I_{R3}=I_a-I_b
   \label{eq:R_3}
 \end{equation}
 in which $Ir3$ is the current flowing from node 7 to 1.
 \begin{equation}
-  Ir4=I_a-I_c
+  I_{R4}=I_a-I_c
   \label{eq:R_4}
 \end{equation}
 in which $Ir4$ is the current flowing from node 6 to 7.
 
 \begin{equation}
-  Ir5=I_d-I_b
+  I_{R5}=I_d-I_b
   \label{eq:R_5}
 \end{equation}
 in which $Ir5$ is the current flowing from node 3 to 7.
 
 \begin{equation}
-  Ivc=I_d-I_c
+  I_{V_C}=I_d-I_c
   \label{eq:V_c}
 \end{equation}
 in which $Ivc$ is the current flowing from node 7 to 4.
@@ -98,8 +98,10 @@ The results obtained with Octave are presented in Table~\ref{tab:op2}.
 
 The circuit consists of 8 nodes: 0 (ground), 1, 2, 3, 4, 5, 6 and 7, respectively associated with nodal voltages $V_0$, $V_1$, $V_2$, $V_3$, $V_4$, $V_5$, $V_6$ and $V_7$ (seen in Figure~\ref{fig:esq}). 
 
-The nodal equations obtained with the nodal method pertain to the mentioned nodes as follows.
-\\
+
+The nodal equations obtained with the nodal method pertain to the mentioned nodes as presented next. 
+The following "nodal" equations are KCL equations applied to the nodes, except equations \ref{eq:N_0}, \ref{eq:N_4_2} 
+and \ref{eq:N_6}. \\
 \\
 \textit{Node 0}:
 \begin{equation}
@@ -123,7 +125,7 @@ The nodal equations obtained with the nodal method pertain to the mentioned node
 \end{equation}
 \textit{Node 4}:
 \begin{equation}
-    I_c - Ivc + I_d = 0
+    (V_5 - V_4) \cdot G_7 + I_{V_C} - I_d = 0
     \label{eq:N_4_1}
 \end{equation}
 \begin{equation}
@@ -142,7 +144,7 @@ The nodal equations obtained with the nodal method pertain to the mentioned node
 \end{equation}
 \textit{Node 7}:
 \begin{equation}
-  Ivc + (V_7 - V_3) \cdot G_5 + (V_7 - V_2) \cdot G_3 + (V_7 - V_6) \cdot G_4 = 0
+  I_{V_C} + (V_7 - V_3) \cdot G_5 + (V_7 - V_2) \cdot G_3 + (V_7 - V_6) \cdot G_4 = 0
   \label{eq:N_7}
 \end{equation}
 
@@ -169,12 +171,12 @@ equations, the system of linear equations (produced in matrix form) is \ref{eq:n
 
 \begin{gather}
   \begin{bmatrix} 
-    (G_1 + G_2 + G_3) & -G_2 & 0 & 0 & 0 & 0 & -G_3 & 0 \\ -G_2 - K_b & G_2 & 0 & 0 & 0 & 0 & K_b & 0 \\ K_b & 0 & G_5 & 0 & 0 & 0 & (-K_b-G_5) & 0 \\ 0 & 0 & 0 & -G_7 & (G_6+G_7) & -G_6 & 0 & 0 \\ 0 & 0 & 0 & 1 & (-K_c \cdot G_6) & (K_c \cdot G_6) & -1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 
+    (G_1 + G_2 + G_3) & -G_2 & 0 & 0 & 0 & 0 & -G_3 & 0 \\ -G_2 - K_b & G_2 & 0 & 0 & 0 & 0 & K_b & 0 \\ K_b & 0 & G_5 & 0 & 0 & 0 & (-K_b-G_5) & 0 \\ 0 & 0 & 0 & -G_7 & (G_6+G_7) & -G_6 & 0 & 0 \\ 0 & 0 & 0 & 1 & (-K_c \cdot G_6) & (K_c \cdot G_6) & -1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & G_7 & -G_7 & 0 & 0 & -1 \\ -G_3 & 0 & -G_5 & 0 & 0 & -G_4 & (G_4 + G_5 + G_3) & 1  
   \end{bmatrix}
   \begin{bmatrix}
-    V_1 \\ V_2 \\ V_3 \\ V_4 \\ V_5 \\ V_6 \\ V_7 \\ I_t
+    V_1 \\ V_2 \\ V_3 \\ V_4 \\ V_5 \\ V_6 \\ V_7 \\ I_{V_C}
   \end{bmatrix}
-  =
+    =
   \begin{bmatrix}
     0 \\ 0 \\ I_d \\ 0 \\ 0 \\ -V_a \\ -I_d \\ 0
   \end{bmatrix}
