@@ -53,27 +53,27 @@ and computed in Octave scripts, from which the Table~\ref{tab:op1} is obtained.
 As learned in theory classes and understood from Figure~\ref{fig:esq}, the current in a branch is a function of the mesh currents the branch is associated with. If the branch is associated with only one mesh current, then its current equals the mesh current. That is not the case for the branches formed by the $R_3$, $R_4$, $R_5$ and $V_c$ components. To determined those currents, the equations \ref{eq:R_3}, \ref{eq:R_4}, \ref{eq:R_5}, and \ref{eq:V_c} are used.
 
 \begin{equation}
-  I_{R3}=I_a-I_b
+  I_{R_3}=I_a-I_b
   \label{eq:R_3}
 \end{equation}
-in which $Ir3$ is the current flowing from node 7 to 1.
+in which $I_{R_3}$ is the current flowing from node 7 to 1.
 \begin{equation}
-  I_{R4}=I_a-I_c
+  I_{R_4}=I_a-I_c
   \label{eq:R_4}
 \end{equation}
-in which $Ir4$ is the current flowing from node 6 to 7.
+in which $I_{R_4}$ is the current flowing from node 6 to 7.
 
 \begin{equation}
-  I_{R5}=I_d-I_b
+  I_{R_5}=I_d-I_b
   \label{eq:R_5}
 \end{equation}
-in which $Ir5$ is the current flowing from node 3 to 7.
+in which $I_{R_5}$ is the current flowing from node 3 to 7.
 
 \begin{equation}
   I_{V_C}=I_d-I_c
   \label{eq:V_c}
 \end{equation}
-in which $Ivc$ is the current flowing from node 7 to 4.
+in which $I_{V_C}$ is the current flowing from node 7 to 4.
 
 The results obtained with Octave are presented in Table~\ref{tab:op2}.
 
